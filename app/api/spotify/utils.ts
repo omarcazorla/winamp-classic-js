@@ -15,8 +15,7 @@ export const getRootAppUrl = () => {
 };
 
 export const getSpotifyRedirectUri = () => {
-  // Example: http://127.0.0.1:3000/winamp
-  return `${getRootAppUrl()}/winamp`;
+  return getRootAppUrl();
 };
 
 export const getSpotifyAuthorizationHeader = (

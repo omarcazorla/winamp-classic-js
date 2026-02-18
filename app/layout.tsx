@@ -3,15 +3,15 @@ import StyledComponentsRegistry from "@/lib/registry";
 import { Metadata, Viewport } from "next";
 import Script from "next/script";
 
-const favicon32Url = `${getRootAppUrl()}/winamp/favicon-32x32.png`;
-const favicon16Url = `${getRootAppUrl()}/winamp/favicon-16x16.png`;
+const favicon32Url = `${getRootAppUrl()}/favicon-32x32.png`;
+const favicon16Url = `${getRootAppUrl()}/favicon-16x16.png`;
 
 export const metadata: Metadata = {
   title: "Winamp Classic",
   description: "Winamp 2 rebuilt for the web — with Spotify & Apple Music.",
   metadataBase: new URL(getRootAppUrl()),
   openGraph: {
-    url: `${getRootAppUrl()}/winamp`,
+    url: getRootAppUrl(),
     title: "Winamp Classic",
     description: "Winamp 2 rebuilt for the web — with Spotify & Apple Music.",
     type: "website",
