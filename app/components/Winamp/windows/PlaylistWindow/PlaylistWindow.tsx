@@ -1,4 +1,5 @@
 import { useWinampUI } from "@/providers/WinampUIProvider";
+import { PLAYLIST_FRAME } from "../../skin/skinConstants";
 import TrackList from "./TrackList";
 import BrowseMode from "./BrowseMode";
 
@@ -29,23 +30,25 @@ export default function PlaylistWindow() {
     <div
       id="playlist-window"
       className={className}
-      style={{ width: "275px", height: "232px" }}
+      style={{
+        width: "275px",
+        height: "232px",
+        backgroundImage: `url(${PLAYLIST_FRAME})`,
+        backgroundSize: "100% 100%",
+        backgroundRepeat: "no-repeat",
+      }}
       onPointerDown={() => setFocusedWindow("playlist")}
     >
-      {/* Header */}
-      <div className="playlist-header draggable">
-        <span className="playlist-header-title draggable">
-          Winamp Playlist
-        </span>
-        <span
-          className="playlist-header-close"
-          onClick={() => toggleWindow("playlist")}
-        >
-          ✕
-        </span>
-      </div>
+      {/* Draggable title bar area */}
+      <div className="playlist-titlebar draggable" />
 
-      {/* Body */}
+      {/* Close button overlay */}
+      <div
+        className="playlist-close-hit"
+        onClick={() => toggleWindow("playlist")}
+      />
+
+      {/* Content area over the black region */}
       <div className="playlist-body">
         {isQueue ? (
           <TrackList tracks={[]} onTrackSelect={() => {}} />
@@ -54,14 +57,8 @@ export default function PlaylistWindow() {
         )}
       </div>
 
-      {/* Footer */}
+      {/* Footer buttons positioned over frame's button area */}
       <div className="playlist-footer">
-        <div
-          className={`playlist-btn ${browseMode === "queue" ? "active" : ""}`}
-          onClick={() => setBrowseMode("queue")}
-        >
-          Queue
-        </div>
         {tabs.map(({ mode, label }) => (
           <div
             key={mode}

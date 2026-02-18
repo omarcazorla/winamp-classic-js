@@ -2,6 +2,8 @@ import { APP_URL } from "@/utils/constants/api";
 
 const SKIN_BASE = `${APP_URL}/winamp/skins/base`;
 
+export const PLAYLIST_FRAME = `${SKIN_BASE}/playlist.png`;
+
 export const SKIN_SPRITES: Record<string, string> = {
   BALANCE: `${SKIN_BASE}/balance.png`,
   CBUTTONS: `${SKIN_BASE}/cbuttons.png`,

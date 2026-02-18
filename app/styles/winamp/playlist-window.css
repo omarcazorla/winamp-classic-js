@@ -1,118 +1,102 @@
-/* Playlist Window */
+/* Playlist Window - frame image background with overlaid content */
 #winamp #playlist-window {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
 }
 
-/* Header */
-#winamp .playlist-header {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to bottom, #3c3c3c, #1f1f1f);
-  padding: 4px 6px;
-  height: 20px;
-  flex-shrink: 0;
-  user-select: none;
+/* Draggable title bar area (covers the gold stripe in the frame) */
+#winamp .playlist-titlebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 28px;
+  height: 14px;
 }
 
-#winamp .playlist-header-title {
-  flex: 1;
-  font-size: 9px;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-#winamp .playlist-header-duration {
-  font-size: 8px;
-  color: #aaa;
-  margin-right: 8px;
-}
-
-#winamp .playlist-header-close {
-  width: 9px;
-  height: 9px;
+/* Invisible close button hit area over the frame's X button */
+#winamp .playlist-close-hit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  color: #aaa;
-  line-height: 1;
+  z-index: 2;
 }
 
-#winamp .playlist-header-close:hover {
-  color: #fff;
-}
-
-/* Body */
+/* Content area positioned over the black region of the frame */
 #winamp .playlist-body {
-  flex: 1;
-  min-height: 0;
+  position: absolute;
+  top: 14px;
+  left: 5px;
+  right: 8px;
+  bottom: 26px;
   overflow-y: auto;
-  background: #000;
+  overflow-x: hidden;
+  background: transparent;
 }
 
 #winamp .playlist-body::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 #winamp .playlist-body::-webkit-scrollbar-track {
-  background: #111;
+  background: transparent;
 }
 
 #winamp .playlist-body::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
+  background: #444;
+  border-radius: 2px;
 }
 
-/* Footer */
+/* Footer buttons positioned over the frame's button area */
 #winamp .playlist-footer {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
   display: flex;
   gap: 2px;
-  padding: 3px 4px;
-  background: linear-gradient(to bottom, #3c3c3c, #2a2a2a);
-  flex-shrink: 0;
+  z-index: 2;
 }
 
 #winamp .playlist-btn {
-  flex: 1;
-  padding: 2px 0;
-  font-size: 8px;
+  width: 38px;
+  height: 15px;
+  font-size: 7px;
   font-family: Arial, sans-serif;
   text-align: center;
+  line-height: 15px;
   cursor: pointer;
   color: #222;
-  background: #bfbfbf;
-  border: 1px solid #999;
-  border-top-color: #ddd;
-  border-left-color: #ddd;
-  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #c8c8c8 40%, #b0b0b0 60%, #c0c0c0 100%);
+  border: 1px solid #666;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5), inset -1px -1px 0 rgba(0,0,0,0.2);
   user-select: none;
-  line-height: 1.2;
 }
 
 #winamp .playlist-btn:hover {
-  background: #d0d0d0;
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d4d4d4 40%, #bcbcbc 60%, #cccccc 100%);
 }
 
 #winamp .playlist-btn:active {
-  border-top-color: #999;
-  border-left-color: #999;
-  border-bottom-color: #ddd;
-  border-right-color: #ddd;
-  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080;
+  background: linear-gradient(to bottom, #a0a0a0 0%, #b0b0b0 40%, #b8b8b8 60%, #a8a8a8 100%);
+  border-top-color: #666;
+  border-left-color: #666;
+  border-bottom-color: #ccc;
+  border-right-color: #ccc;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.5), inset 1px 1px 0 rgba(0,0,0,0.2);
 }
 
 #winamp .playlist-btn.active {
-  background: #a0a0a0;
-  border-top-color: #999;
-  border-left-color: #999;
-  border-bottom-color: #ddd;
-  border-right-color: #ddd;
-  box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080;
+  background: linear-gradient(to bottom, #999 0%, #aaa 40%, #b0b0b0 60%, #a0a0a0 100%);
+  border-top-color: #666;
+  border-left-color: #666;
+  border-bottom-color: #ccc;
+  border-right-color: #ccc;
+  box-shadow: inset -1px -1px 0 rgba(255,255,255,0.4), inset 1px 1px 0 rgba(0,0,0,0.3);
   font-weight: bold;
 }
 
@@ -143,7 +127,6 @@
 }
 
 #winamp .playlist-track-number {
-  flex-shrink: 0;
   opacity: 0.6;
   font-size: 10px;
 }
@@ -154,12 +137,11 @@
 }
 
 #winamp .playlist-track-duration {
-  flex-shrink: 0;
   opacity: 0.7;
   font-size: 10px;
 }
 
-/* Browse list items (albums, artists, playlists) */
+/* Browse list items */
 #winamp .playlist-browse-item {
   padding: 2px 6px;
   cursor: pointer;
@@ -180,14 +162,14 @@
   cursor: pointer;
   color: #aaa;
   font-size: 10px;
-  background: #111;
+  background: rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid #222;
   user-select: none;
 }
 
 #winamp .playlist-back-btn:hover {
   color: #fff;
-  background: #1a1a1a;
+  background: rgba(20, 20, 20, 0.8);
 }
 
 /* Auth prompt */
@@ -221,7 +203,7 @@
   width: 100%;
   padding: 3px 6px;
   font-size: 11px;
-  background: #111;
+  background: rgba(0, 0, 0, 0.8);
   color: #00ff3b;
   border: 1px solid #333;
   outline: none;
