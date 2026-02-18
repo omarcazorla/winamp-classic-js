@@ -1,0 +1,135 @@
+/* Equalizer Window - 275x116px */
+#winamp #equalizer-window {
+  position: relative;
+  width: 275px;
+  height: 116px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#winamp .equalizer-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 275px;
+  height: 14px;
+}
+
+#winamp #eq-buttons {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  height: 9px;
+  width: 20px;
+}
+
+#winamp #equalizer-shade {
+  position: absolute;
+  right: 11px;
+  width: 9px;
+  height: 9px;
+}
+
+#winamp #equalizer-close {
+  position: absolute;
+  right: 0;
+  width: 9px;
+  height: 9px;
+}
+
+#winamp #on {
+  position: absolute;
+  top: 18px;
+  left: 14px;
+  width: 26px;
+  height: 12px;
+}
+
+#winamp #auto {
+  position: absolute;
+  top: 18px;
+  left: 39px;
+  width: 32px;
+  height: 12px;
+}
+
+#winamp #eqGraph {
+  position: absolute;
+  top: 17px;
+  left: 86px;
+  width: 113px;
+  height: 19px;
+}
+
+#winamp #preamp-line {
+  position: absolute;
+  top: 40px;
+  left: 21px;
+  width: 113px;
+  height: 1px;
+}
+
+#winamp #presets {
+  position: absolute;
+  top: 18px;
+  left: 217px;
+  width: 44px;
+  height: 12px;
+}
+
+#winamp .eq-sliders {
+  position: absolute;
+  top: 38px;
+  left: 21px;
+  width: 239px;
+  height: 63px;
+}
+
+#winamp .band {
+  position: absolute;
+  width: 14px;
+  height: 63px;
+}
+
+#winamp .band .slider-handle {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: 1px;
+}
+
+#winamp .band-preamp {
+  left: 0;
+}
+
+#winamp .band-60 {
+  left: 36px;
+}
+#winamp .band-170 {
+  left: 54px;
+}
+#winamp .band-310 {
+  left: 72px;
+}
+#winamp .band-600 {
+  left: 90px;
+}
+#winamp .band-1000 {
+  left: 108px;
+}
+#winamp .band-3000 {
+  left: 126px;
+}
+#winamp .band-6000 {
+  left: 144px;
+}
+#winamp .band-12000 {
+  left: 162px;
+}
+#winamp .band-14000 {
+  left: 180px;
+}
+#winamp .band-16000 {
+  left: 198px;
+}

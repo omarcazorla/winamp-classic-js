@@ -1,0 +1,231 @@
+/* Playlist Window */
+#winamp #playlist-window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Top section */
+#winamp .playlist-top {
+  display: flex;
+  height: 20px;
+  width: 100%;
+}
+
+#winamp .playlist-top-left {
+  width: 25px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+#winamp .playlist-top-left-fill {
+  flex: 1;
+  height: 20px;
+}
+
+#winamp .playlist-top-title {
+  width: 100px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+#winamp .playlist-top-right-fill {
+  flex: 1;
+  height: 20px;
+}
+
+#winamp .playlist-top-right {
+  width: 25px;
+  height: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+#winamp #playlist-shade-button {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  width: 9px;
+  height: 9px;
+}
+
+#winamp #playlist-close-button {
+  position: absolute;
+  top: 3px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+}
+
+/* Middle section */
+#winamp .playlist-middle {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+#winamp .playlist-middle-left {
+  width: 12px;
+  flex-shrink: 0;
+}
+
+#winamp .playlist-middle-center {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+#winamp .playlist-middle-right {
+  width: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Scrollbar */
+#winamp .playlist-scrollbar {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 0;
+  width: 8px;
+  margin-left: 6px;
+}
+
+#winamp .playlist-scrollbar-handle {
+  position: absolute;
+  width: 8px;
+  height: 18px;
+}
+
+/* Bottom section */
+#winamp .playlist-bottom {
+  display: flex;
+  height: 38px;
+  width: 100%;
+}
+
+#winamp .playlist-bottom-left {
+  width: 125px;
+  height: 38px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1px 2px 1px;
+}
+
+#winamp .playlist-bottom-center {
+  flex: 1;
+  height: 38px;
+}
+
+#winamp .playlist-bottom-right {
+  width: 150px;
+  height: 38px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Playlist visualizer */
+#winamp .playlist-visualizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 38px;
+}
+
+/* Scroll buttons */
+#winamp #playlist-scroll-up-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 18px;
+  cursor: pointer;
+}
+
+#winamp #playlist-scroll-down-button {
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 8px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Track list */
+#winamp .playlist-tracks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  font-size: 9px;
+  line-height: 13px;
+}
+
+#winamp .playlist-tracks::-webkit-scrollbar {
+  display: none;
+}
+
+#winamp .playlist-track {
+  height: 13px;
+  padding: 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#winamp .playlist-track:hover {
+  background: rgba(0, 0, 255, 0.3);
+}
+
+#winamp .playlist-track.selected {
+  background: rgba(0, 0, 255, 0.5);
+}
+
+#winamp .playlist-track.current {
+  color: #FFFFFF;
+}
+
+#winamp .playlist-track-number {
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+#winamp .playlist-track-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#winamp .playlist-track-duration {
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+/* Playlist menus */
+#winamp .playlist-menu-entry {
+  position: relative;
+  width: 22px;
+  height: 18px;
+  display: inline-block;
+}
+
+/* Resize handle */
+#winamp #playlist-resize-target {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+}

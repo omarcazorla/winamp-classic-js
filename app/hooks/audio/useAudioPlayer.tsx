@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-import { useEventListener, useMKEventListener, useHapticFeedback } from "@/hooks";
+import { useMKEventListener } from "@/hooks";
 import * as ConversionUtils from "@/utils/conversion";
 
 import {
@@ -17,7 +17,6 @@ import {
   ShuffleMode,
   RepeatMode,
 } from "..";
-import { IpodEvent } from "@/utils/events";
 
 const defaultPlaybackInfoState = {
   isPlaying: false,
@@ -523,27 +522,6 @@ export const AudioPlayerProvider = ({ children }: Props) => {
       updateSpotifyPlayerState,
     ]
   );
-
-  const { triggerHaptics } = useHapticFeedback();
-
-  const handlePlayPauseClick = useCallback(() => {
-    triggerHaptics();
-    togglePlayPause();
-  }, [togglePlayPause, triggerHaptics]);
-
-  const handleSkipNext = useCallback(() => {
-    triggerHaptics();
-    skipNext();
-  }, [skipNext, triggerHaptics]);
-
-  const handleSkipPrevious = useCallback(() => {
-    triggerHaptics();
-    skipPrevious();
-  }, [skipPrevious, triggerHaptics]);
-
-  useEventListener<IpodEvent>("playpauseclick", handlePlayPauseClick);
-  useEventListener<IpodEvent>("forwardclick", handleSkipNext);
-  useEventListener<IpodEvent>("backwardclick", handleSkipPrevious);
 
   // Apple playback event listeners
   useMKEventListener("playbackStateDidChange", handleApplePlaybackStateChange);

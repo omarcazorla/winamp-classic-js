@@ -1,0 +1,409 @@
+/* Main Window - 275x116px */
+#winamp #main-window {
+  position: relative;
+  height: 116px;
+  width: 275px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#winamp #title-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 275px;
+}
+
+#winamp #option-context,
+#winamp #minimize,
+#winamp #shade,
+#winamp #close {
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  top: 3px;
+}
+
+#winamp #title-bar #option {
+  width: 100%;
+  height: 100%;
+}
+
+#winamp #title-bar #option-context {
+  left: 6px;
+}
+#winamp #title-bar #minimize {
+  left: 244px;
+}
+#winamp #title-bar #shade {
+  left: 254px;
+}
+#winamp #title-bar #close {
+  left: 264px;
+}
+
+#winamp #clutter-bar {
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  height: 43px;
+  width: 8px;
+}
+
+#winamp #play-pause {
+  position: absolute;
+  top: 28px;
+  left: 26px;
+  height: 9px;
+  width: 9px;
+  background-repeat: no-repeat;
+}
+
+#winamp #work-indicator,
+#winamp .play #work-indicator,
+#winamp #work-indicator.selected {
+  position: absolute;
+  top: 28px;
+  left: 24px;
+  height: 9px;
+  width: 3px;
+}
+
+#winamp .webamp-status #time {
+  position: absolute;
+  left: 39px;
+  top: 26px;
+  height: 13px;
+  width: 59px;
+}
+
+#winamp .stop .webamp-status #time {
+  display: none;
+}
+
+#winamp .pause .webamp-status #time {
+  animation: blink 2s step-start 1s infinite;
+  -webkit-animation: blink 2s step-start 1s infinite;
+}
+
+@keyframes blink {
+  50% { visibility: hidden; }
+}
+
+#winamp .webamp-status #time #minus-sign {
+  position: absolute;
+  top: 6px;
+  left: -1px;
+  width: 5px;
+  height: 1px;
+}
+
+#winamp .webamp-status #time #minute-first-digit {
+  position: absolute;
+  pointer-events: none;
+  left: 9px;
+  height: 13px;
+  width: 9px;
+}
+#winamp .webamp-status #time #minute-second-digit {
+  position: absolute;
+  pointer-events: none;
+  left: 21px;
+  height: 13px;
+  width: 9px;
+}
+#winamp .webamp-status #time #second-first-digit {
+  position: absolute;
+  pointer-events: none;
+  left: 39px;
+  height: 13px;
+  width: 9px;
+}
+#winamp .webamp-status #time #second-second-digit {
+  position: absolute;
+  pointer-events: none;
+  left: 51px;
+  height: 13px;
+  width: 9px;
+}
+
+#winamp #main-window #visualizer {
+  position: absolute;
+  top: 43px;
+  left: 24px;
+  width: 76px;
+  height: 16px;
+}
+
+#winamp .text {
+  display: none;
+}
+
+#winamp #marquee {
+  position: absolute;
+  left: 111px;
+  top: 24px;
+  width: 154px;
+  height: 6px;
+  overflow: hidden;
+  display: block;
+  padding: 3px 0px;
+}
+
+#winamp .media-info #kbps {
+  position: absolute;
+  left: 111px;
+  top: 43px;
+  width: 15px;
+  height: 6px;
+  overflow: hidden;
+}
+
+#winamp .stop .media-info #kbps {
+  display: none;
+}
+
+#winamp .media-info #khz {
+  position: absolute;
+  left: 156px;
+  top: 43px;
+  width: 10px;
+  height: 6px;
+  overflow: hidden;
+}
+
+#winamp .stop .media-info #khz {
+  display: none;
+}
+
+#winamp .media-info .mono-stereo {
+  position: absolute;
+  left: 212px;
+  top: 41px;
+  width: 57px;
+  height: 12px;
+}
+
+#winamp .media-info .mono-stereo div {
+  position: absolute;
+  height: 12px;
+}
+
+#winamp .media-info .mono-stereo #mono {
+  width: 27px;
+}
+
+#winamp .media-info .mono-stereo #stereo {
+  left: 27px;
+  width: 29px;
+}
+
+#winamp #volume {
+  position: absolute;
+  left: 107px;
+  top: 57px;
+  height: 13px;
+  width: 68px;
+  background-position: 0 0;
+}
+
+#winamp #volume input {
+  height: 13px;
+  width: 65px;
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#winamp #volume input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  top: 1px;
+  height: 11px;
+  width: 14px;
+  position: relative;
+}
+#winamp #volume input::-moz-range-thumb {
+  top: 1px;
+  height: 11px;
+  width: 14px;
+  border: none;
+}
+#winamp #volume input::-webkit-slider-runnable-track {
+  background: transparent;
+}
+#winamp #volume input::-moz-range-track {
+  background: transparent;
+}
+
+#winamp #balance {
+  position: absolute;
+  left: 177px;
+  top: 57px;
+  height: 13px;
+  width: 38px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-position: 0 0;
+}
+#winamp #balance::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  top: 1px;
+  height: 11px;
+  width: 14px;
+  position: relative;
+}
+#winamp #balance::-moz-range-thumb {
+  top: 1px;
+  height: 11px;
+  width: 14px;
+  border: none;
+}
+#winamp #balance::-webkit-slider-runnable-track {
+  background: transparent;
+}
+#winamp #balance::-moz-range-track {
+  background: transparent;
+}
+
+#winamp .windows {
+  position: absolute;
+  left: 219px;
+  top: 58px;
+  width: 46px;
+  height: 12px;
+}
+
+#winamp .windows div {
+  position: absolute;
+  width: 23px;
+  height: 12px;
+}
+
+#winamp .windows #equalizer-button {
+  left: 0;
+}
+
+#winamp .windows #playlist-button {
+  left: 23px;
+}
+
+#winamp #position {
+  position: absolute;
+  left: 16px;
+  top: 72px;
+  width: 248px;
+  height: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-position: 0 0;
+}
+
+#winamp #position::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 29px;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+
+#winamp #position::-moz-range-thumb {
+  height: 10px;
+  width: 29px;
+  border: none;
+}
+
+#winamp #position::-webkit-slider-runnable-track {
+  background: transparent;
+}
+#winamp #position::-moz-range-track {
+  background: transparent;
+}
+
+#winamp .stop #position::-webkit-slider-thumb {
+  visibility: hidden;
+}
+#winamp .stop #position::-moz-range-thumb {
+  visibility: hidden;
+}
+#winamp .play #position::-webkit-slider-thumb {
+  visibility: visible;
+}
+
+#winamp .actions div {
+  height: 18px;
+  width: 23px;
+  position: absolute;
+}
+
+#winamp .actions #previous {
+  top: 88px;
+  left: 16px;
+}
+#winamp .actions #play {
+  top: 88px;
+  left: 39px;
+}
+#winamp .actions #pause {
+  top: 88px;
+  left: 62px;
+}
+#winamp .actions #stop {
+  top: 88px;
+  left: 85px;
+}
+#winamp .actions #next {
+  top: 88px;
+  left: 108px;
+  width: 22px;
+}
+
+#winamp #eject {
+  position: absolute;
+  top: 89px;
+  left: 136px;
+  height: 16px;
+  width: 22px;
+}
+
+#winamp .shuffle-repeat {
+  position: absolute;
+  top: 89px;
+  left: 164px;
+  width: 74px;
+}
+
+#winamp .shuffle-repeat div {
+  position: absolute;
+  height: 15px;
+}
+
+#winamp .shuffle-repeat #shuffle {
+  width: 47px;
+}
+
+#winamp .shuffle-repeat #repeat {
+  left: 46px;
+  width: 28px;
+}
+
+#winamp #about {
+  position: absolute;
+  top: 91px;
+  left: 253px;
+  height: 15px;
+  width: 13px;
+}
+
+#winamp .digit {
+  position: absolute;
+  display: inline-block;
+  width: 9px;
+  height: 13px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}

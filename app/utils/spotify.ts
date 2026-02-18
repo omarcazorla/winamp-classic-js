@@ -52,7 +52,7 @@ export const getRefreshedSpotifyTokens = async (
   }
 
   try {
-    const url = `${getRootAppUrl()}/ipod/api/spotify/refresh?refresh_token=${refreshToken}`;
+    const url = `${getRootAppUrl()}/winamp/api/spotify/refresh?refresh_token=${refreshToken}`;
     const response = await fetch(url, {
       credentials: "same-origin",
       mode: "cors",

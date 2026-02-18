@@ -2,24 +2,12 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "iPod.js",
-    short_name: "iPod.js",
-    description: "An iPod Classic built for the web.",
-    start_url: "/ipod",
+    name: "Winamp Classic",
+    short_name: "Winamp",
+    description: "Winamp 2 rebuilt for the web — with Spotify & Apple Music.",
+    start_url: "/winamp",
     display: "standalone",
-    theme_color: "#ffffff",
-    background_color: "#ffffff",
-    icons: [
-      {
-        src: "/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        src: "/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-    ],
+    theme_color: "#3a3a3a",
+    background_color: "#3a3a3a",
   };
 }

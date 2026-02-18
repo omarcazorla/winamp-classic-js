@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext } from "react";
 
-import { useSettings, useViewContext } from "@/hooks";
+import { useSettings } from "@/hooks";
 
 export interface MusicKitState {
   musicKit?: typeof MusicKit;
@@ -15,6 +15,7 @@ export const MusicKitContext = createContext<MusicKitState | undefined>(
 
 export type MusicKitHook = MusicKitState & {
   music: MusicKit.MusicKitInstance;
+  authorize: () => Promise<void>;
   signIn: () => Promise<void>;
   signOut: () => void;
 };
@@ -23,7 +24,6 @@ export const useMusicKit = (): MusicKitHook => {
   const { setIsAppleAuthorized, isSpotifyAuthorized, setService } =
     useSettings();
   const context = useContext(MusicKitContext);
-  const { showPopup } = useViewContext();
 
   if (!context) {
     throw new Error("useMusicKit must be used within MusicKitProvider");
@@ -31,28 +31,11 @@ export const useMusicKit = (): MusicKitHook => {
 
   const { isConfigured, hasDevToken, hasError } = context;
 
-  const signIn = useCallback(async () => {
+  const authorize = useCallback(async () => {
     const music = window.MusicKit?.getInstance();
 
     if (hasError) {
-      showPopup({
-        id: "musicProviderError",
-        title: "Music Provider Error",
-        description:
-          "Apple Music was unable to mount. Try reloading or feel free to file bug report 🐞",
-        listOptions: [
-          {
-            type: "action",
-            label: "Reload",
-            onSelect: () => window.location.reload(),
-          },
-          {
-            type: "action",
-            label: "Done",
-            onSelect: () => {},
-          },
-        ],
-      });
+      console.error("Apple Music was unable to mount. Try reloading.");
       return;
     }
 
@@ -65,7 +48,7 @@ export const useMusicKit = (): MusicKitHook => {
         setService("apple");
       }
     }
-  }, [hasError, setService, showPopup]);
+  }, [hasError, setService]);
 
   const signOut = useCallback(() => {
     const music = window.MusicKit?.getInstance();
@@ -82,7 +65,8 @@ export const useMusicKit = (): MusicKitHook => {
     hasError,
     musicKit: window.MusicKit,
     music: window.MusicKit?.getInstance(),
-    signIn,
+    authorize,
+    signIn: authorize,
     signOut,
   };
 };

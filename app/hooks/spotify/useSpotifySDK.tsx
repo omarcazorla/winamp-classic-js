@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 
-import { useViewContext } from "@/hooks";
 import * as SpotifyUtils from "@/utils/spotify";
 
 import { useSettings } from "..";
@@ -28,7 +27,6 @@ export const useSpotifySDK = ({
     isAppleAuthorized,
     setService,
   } = useSettings();
-  const { showPopup } = useViewContext();
   const state = useContext(SpotifySDKContext);
 
   if (!state) {
@@ -51,28 +49,15 @@ export const useSpotifySDK = ({
    */
   const signIn = useCallback(async () => {
     if (!isSpotifyAuthorized) {
-      // Generate the Spotify OAuth login URL with the client ID, state, scope, and redirect URI.
       const res = await fetch(`${API_URL}/spotify/login`);
       const spotifyLoginUrl = (await res.json()).message;
-
       window.open(spotifyLoginUrl, "_self");
     } else if (!state.isPlayerConnected) {
-      showPopup({
-        id: "spotifyNotSupported",
-        title: "Spotify Not Supported",
-        description: "Spotify was unable to mount on this browser :(",
-        listOptions: [
-          {
-            type: "action",
-            label: "Okay 😞",
-            onSelect: () => {},
-          },
-        ],
-      });
+      console.warn("Spotify was unable to mount on this browser");
     } else {
       setService("spotify");
     }
-  }, [isSpotifyAuthorized, setService, showPopup, state.isPlayerConnected]);
+  }, [isSpotifyAuthorized, setService, state.isPlayerConnected]);
 
   const signOut = useCallback(async () => {
     state.spotifyPlayer?.disconnect();
@@ -80,7 +65,6 @@ export const useSpotifySDK = ({
 
     await SpotifyUtils.logOutSpotify();
 
-    // Change to apple music if available.
     if (isAppleAuthorized) {
       setService("apple");
     } else {

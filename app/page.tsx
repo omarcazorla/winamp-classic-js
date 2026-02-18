@@ -1,4 +1,4 @@
-import { Ipod } from "@/components/Ipod";
+import { Winamp } from "@/components/Winamp";
 import { APPLE_DEVELOPER_TOKEN } from "@/utils/constants/api";
 
 export default async function Page({
@@ -11,7 +11,7 @@ export default async function Page({
   const spotifyCode = searchParams.code;
 
   return (
-    <Ipod
+    <Winamp
       spotifyCallbackCode={spotifyCode}
       appleAccessToken={appleAccessToken}
     />

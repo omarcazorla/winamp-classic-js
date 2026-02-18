@@ -1,4 +1,4 @@
-export const SELECTED_SERVICE_KEY = "ipodJsSelectedService";
+export const SELECTED_SERVICE_KEY = "winampSelectedService";
 
 export const supportedServices = {
   apple: "apple",

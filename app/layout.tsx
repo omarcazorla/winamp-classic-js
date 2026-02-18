@@ -3,34 +3,20 @@ import StyledComponentsRegistry from "@/lib/registry";
 import { Metadata, Viewport } from "next";
 import Script from "next/script";
 
-const appleTouchIconUrl = `${getRootAppUrl()}/ipod/apple-touch-icon.png`;
-const favicon32Url = `${getRootAppUrl()}/ipod/favicon-32x32.png`;
-const favicon16Url = `${getRootAppUrl()}/ipod/favicon-16x16.png`;
+const favicon32Url = `${getRootAppUrl()}/winamp/favicon-32x32.png`;
+const favicon16Url = `${getRootAppUrl()}/winamp/favicon-16x16.png`;
 
 export const metadata: Metadata = {
-  title: "iPod.js",
-  description: "An iPod Classic built for the web.",
+  title: "Winamp Classic",
+  description: "Winamp 2 rebuilt for the web — with Spotify & Apple Music.",
   metadataBase: new URL(getRootAppUrl()),
   openGraph: {
-    url: "http://tannerv.com/ipod",
-    title: "iPod.js",
-    description: "An iPod Classic built for the web.",
+    url: `${getRootAppUrl()}/winamp`,
+    title: "Winamp Classic",
+    description: "Winamp 2 rebuilt for the web — with Spotify & Apple Music.",
     type: "website",
-    images: [
-      {
-        url: "https://user-images.githubusercontent.com/21055469/71636084-6081a800-2be0-11ea-98ee-9599a3396c84.png",
-        width: 1200,
-        height: 630,
-        alt: "iPod.js",
-      },
-    ],
   },
   icons: [
-    {
-      rel: "apple-touch-icon",
-      sizes: "180x180",
-      url: appleTouchIconUrl,
-    },
     {
       rel: "icon",
       type: "image/png",
