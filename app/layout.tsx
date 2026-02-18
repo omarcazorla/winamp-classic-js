@@ -29,6 +29,11 @@ export const metadata: Metadata = {
       sizes: "16x16",
       url: favicon16Url,
     },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: `${getRootAppUrl()}/apple-touch-icon.png`,
+    },
   ],
 };
 
