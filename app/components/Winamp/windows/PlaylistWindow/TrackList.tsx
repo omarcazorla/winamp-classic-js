@@ -1,5 +1,4 @@
 import { useAudioPlayer } from "@/hooks/audio/useAudioPlayer";
-import { PLAYLIST_COLORS } from "../../skin/skinConstants";
 
 interface Track {
   id: string;
@@ -14,10 +13,11 @@ interface TrackListProps {
   onTrackSelect: (index: number) => void;
 }
 
-function formatDuration(seconds?: number): string {
-  if (!seconds) return "";
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
+function formatDuration(ms?: number): string {
+  if (!ms) return "";
+  const totalSeconds = Math.floor(ms / 1000);
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
@@ -25,24 +25,14 @@ export default function TrackList({ tracks, onTrackSelect }: TrackListProps) {
   const { nowPlayingItem } = useAudioPlayer();
 
   return (
-    <div
-      className="playlist-tracks"
-      style={{
-        color: PLAYLIST_COLORS.normal,
-        backgroundColor: PLAYLIST_COLORS.normalbg,
-        fontFamily: `${PLAYLIST_COLORS.font}, Arial, sans-serif`,
-      }}
-    >
+    <div className="playlist-tracks">
       {tracks.map((track, index) => {
-        const isCurrent = nowPlayingItem?.name === track.name;
+        const isCurrent = nowPlayingItem?.id === track.id;
         return (
           <div
             key={track.id || index}
             className={`playlist-track ${isCurrent ? "current" : ""}`}
             onClick={() => onTrackSelect(index)}
-            style={{
-              color: isCurrent ? PLAYLIST_COLORS.current : PLAYLIST_COLORS.normal,
-            }}
           >
             <span className="playlist-track-number">{index + 1}.</span>
             <span className="playlist-track-title">
@@ -57,11 +47,8 @@ export default function TrackList({ tracks, onTrackSelect }: TrackListProps) {
         );
       })}
       {tracks.length === 0 && (
-        <div
-          className="playlist-track"
-          style={{ color: PLAYLIST_COLORS.normal, opacity: 0.5 }}
-        >
-          No tracks loaded. Use the menu below to browse music.
+        <div className="playlist-status">
+          No tracks loaded. Use the tabs below to browse music.
         </div>
       )}
     </div>

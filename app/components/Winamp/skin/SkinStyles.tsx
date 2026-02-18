@@ -168,62 +168,6 @@ function generateSpriteCSS(): string {
   rule("#equalizer-window.shade", s.EQ_EX, 0, 15);
   rule("#equalizer-window.shade.selected", s.EQ_EX, 0, 0);
 
-  // === PLAYLIST WINDOW ===
-  rule(".playlist-top-left-fill, .playlist-top-left-spacer, .playlist-top-right-fill, .playlist-top-right-spacer", s.PLEDIT, 127, 21);
-  rule(".playlist-top-left", s.PLEDIT, 0, 21);
-  rule(".playlist-top-title", s.PLEDIT, 26, 21);
-  rule(".playlist-top-right", s.PLEDIT, 153, 21);
-  rule(".selected .playlist-top-left-fill, .selected .playlist-top-left-spacer, .selected .playlist-top-right-fill, .selected .playlist-top-right-spacer", s.PLEDIT, 127, 0);
-  rule(".selected .playlist-top-left", s.PLEDIT, 0, 0);
-  rule(".selected .playlist-top-title", s.PLEDIT, 26, 0);
-  rule(".selected .playlist-top-right", s.PLEDIT, 153, 0);
-  rule(".playlist-middle-left", s.PLEDIT, 0, 42);
-  rule(".playlist-middle-right", s.PLEDIT, 31, 42);
-  rule(".playlist-bottom", s.PLEDIT, 179, 0);
-  rule(".playlist-bottom-left", s.PLEDIT, 0, 72);
-  rule(".playlist-bottom-right", s.PLEDIT, 126, 72);
-  rule(".playlist-visualizer", s.PLEDIT, 205, 0);
-  rule(".playlist-scrollbar-handle", s.PLEDIT, 52, 53);
-  rule(".playlist-middle-right.winamp-active .playlist-scrollbar-handle", s.PLEDIT, 61, 53);
-
-  // Playlist menu buttons
-  rule("#playlist-add-menu .add-url", s.PLEDIT, 0, 111);
-  rule("#playlist-add-menu .hover .add-url", s.PLEDIT, 23, 111);
-  rule("#playlist-add-menu .add-dir", s.PLEDIT, 0, 130);
-  rule("#playlist-add-menu .hover .add-dir", s.PLEDIT, 23, 130);
-  rule("#playlist-add-menu .add-file", s.PLEDIT, 0, 149);
-  rule("#playlist-add-menu .hover .add-file", s.PLEDIT, 23, 149);
-
-  rule("#playlist-remove-menu .remove-all", s.PLEDIT, 54, 111);
-  rule("#playlist-remove-menu .hover .remove-all", s.PLEDIT, 77, 111);
-  rule("#playlist-remove-menu .remove-selected", s.PLEDIT, 54, 149);
-  rule("#playlist-remove-menu .hover .remove-selected", s.PLEDIT, 77, 149);
-
-  rule("#playlist-selection-menu .select-all", s.PLEDIT, 104, 149);
-  rule("#playlist-selection-menu .hover .select-all", s.PLEDIT, 127, 149);
-  rule("#playlist-selection-menu .select-zero", s.PLEDIT, 104, 130);
-  rule("#playlist-selection-menu .hover .select-zero", s.PLEDIT, 127, 130);
-  rule("#playlist-selection-menu .invert-selection", s.PLEDIT, 104, 111);
-  rule("#playlist-selection-menu .hover .invert-selection", s.PLEDIT, 127, 111);
-
-  rule("#playlist-misc-menu .sort-list", s.PLEDIT, 154, 111);
-  rule("#playlist-misc-menu .hover .sort-list", s.PLEDIT, 177, 111);
-  rule("#playlist-misc-menu .file-info", s.PLEDIT, 154, 130);
-  rule("#playlist-misc-menu .hover .file-info", s.PLEDIT, 177, 130);
-  rule("#playlist-misc-menu .misc-options", s.PLEDIT, 154, 149);
-  rule("#playlist-misc-menu .hover .misc-options", s.PLEDIT, 177, 149);
-
-  rule("#playlist-list-menu .new-list", s.PLEDIT, 204, 111);
-  rule("#playlist-list-menu .hover .new-list", s.PLEDIT, 227, 111);
-  rule("#playlist-list-menu .save-list", s.PLEDIT, 204, 130);
-  rule("#playlist-list-menu .hover .save-list", s.PLEDIT, 227, 130);
-  rule("#playlist-list-menu .load-list", s.PLEDIT, 204, 149);
-  rule("#playlist-list-menu .hover .load-list", s.PLEDIT, 227, 149);
-
-  // Playlist close/shade buttons
-  rule("#playlist-close-button.winamp-active", s.PLEDIT, 52, 42);
-  rule("#playlist-window #playlist-shade-button.winamp-active", s.PLEDIT, 62, 42);
-
   return rules.join("\n");
 }
 
