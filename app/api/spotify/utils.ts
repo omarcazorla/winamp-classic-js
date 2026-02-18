@@ -8,10 +8,18 @@ import { SPOTIFY_TOKENS_COOKIE_NAME } from "@/utils/constants/api";
 export const getRootAppUrl = () => {
   const isDev = process.env.NODE_ENV === "development";
 
-  const protocol = isDev ? "http" : "https";
-  const rootUrl = isDev ? `127.0.0.1:3000` : process.env.VERCEL_BASE_URL;
+  if (isDev) {
+    return "http://127.0.0.1:3000";
+  }
 
-  return `${protocol}://${rootUrl}`;
+  // VERCEL_PROJECT_PRODUCTION_URL is the production domain (e.g. "winamp-classic-js.vercel.app")
+  // VERCEL_URL is the deployment-specific URL (includes branch/commit URLs)
+  const host =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+    process.env.VERCEL_URL ||
+    process.env.VERCEL_BASE_URL;
+
+  return `https://${host}`;
 };
 
 export const getSpotifyRedirectUri = () => {

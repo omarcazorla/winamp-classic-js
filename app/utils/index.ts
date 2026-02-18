@@ -30,12 +30,21 @@ export const formatPlaybackTime = (seconds: number) => {
  * [Client-side only] Returns the root URL of the app, depending on the environment
  */
 export const getRootAppUrl = () => {
+  if (typeof window !== "undefined") {
+    return window.location.origin;
+  }
+
   const isDev = process.env.NODE_ENV === "development";
+  if (isDev) {
+    return "http://127.0.0.1:3000";
+  }
 
-  const protocol = isDev ? "http" : "https";
-  const rootUrl = isDev ? `127.0.0.1:3000` : process.env.VERCEL_BASE_URL;
+  const host =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+    process.env.VERCEL_URL ||
+    process.env.VERCEL_BASE_URL;
 
-  return `${protocol}://${rootUrl}`;
+  return `https://${host}`;
 };
 
 /**
