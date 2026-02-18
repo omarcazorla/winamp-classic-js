@@ -144,12 +144,12 @@
 #winamp #marquee {
   position: absolute;
   left: 111px;
-  top: 24px;
-  width: 154px;
-  height: 6px;
+  top: 22px;
+  width: 148px;
+  height: 10px;
   overflow: hidden;
   display: block;
-  padding: 3px 0px;
+  padding: 0;
 }
 
 #winamp .media-info #kbps {

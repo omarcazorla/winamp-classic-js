@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #3a3a3a url('/wallpaper.webp') no-repeat center center / cover;
-    overflow: auto;
+    overflow: hidden;
   }
 
   a {
