@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 10vh;
+    padding-top: 5vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #3a3a3a url('/wallpaper.webp') no-repeat center center / cover;
